@@ -1,0 +1,44 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Evennement{% endblock %}
+
+{% block body %}
+    <h1>Evennement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ evennement.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ evennement.nom }}</td>
+            </tr>
+            <tr>
+                <th>Date_debut</th>
+                <td>{{ evennement.dateDebut ? evennement.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date_fin</th>
+                <td>{{ evennement.dateFin ? evennement.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ evennement.lieu }}</td>
+            </tr>
+            <tr>
+                <th>NbParticipant</th>
+                <td>{{ evennement.nbParticipant }}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+   <div><img src="{{ asset('assets/img/' ~ evennement.image) }}" alt="..." width="800" height="500"></div>
+
+    <a href="{{ path('app_evennement_index') }}">back to list</a>
+
+   
+
+   
+{% endblock %}
